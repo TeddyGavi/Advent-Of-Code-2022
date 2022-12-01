@@ -1,0 +1,15 @@
+{
+  "name": "adventofcode2022",
+  "version": "1.0.0",
+  "description": "Coding Challenges For Dec 2022",
+  "main": "day1.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Matt",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "typescript": "^4.9.3"
+  }
+}
