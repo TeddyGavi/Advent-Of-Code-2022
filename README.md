@@ -9,3 +9,5 @@
 - [ ] all in TS
 - [ ] not get frustrated
 - [ ] have fun
+- Extra
+  - [ ] write at least two tests for each
