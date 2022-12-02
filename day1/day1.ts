@@ -36,4 +36,4 @@ const sums: number[] = sumNested(matrix(stringIFYInput(elf))).sort(
   (a, b) => b - a
 );
 
-console.log("part 1:", sums[0], "part 2:", sums[0] + sums[1] + sums[2]);
+// console.log("part 1:", sums[0], "part 2:", sums[0] + sums[1] + sums[2]);

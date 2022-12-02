@@ -35,4 +35,4 @@ function sumNested(matrix) {
 }
 exports.sumNested = sumNested;
 var sums = sumNested(matrix(stringIFYInput(input_1.elf))).sort(function (a, b) { return b - a; });
-console.log("part 1:", sums[0], "part 2:", sums[0] + sums[1] + sums[2]);
+// console.log("part 1:", sums[0], "part 2:", sums[0] + sums[1] + sums[2]);
