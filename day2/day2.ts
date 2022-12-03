@@ -21,6 +21,10 @@ rock is worth 1
 paper is worth 2
 scissors worth 3
 
+Y is draw
+X is lose
+Z is win
+
 win is 6
 loss is 0
 tie is 3
@@ -84,6 +88,12 @@ const isDraw: Input = {
   C: "Z",
 };
 
+const isLose: Input = {
+  A: "Z",
+  B: "X",
+  C: "Y",
+};
+
 interface WinLosePoints {
   win: number;
   lose: number;
@@ -96,7 +106,29 @@ const winLosePoint: WinLosePoints = {
   draw: 3,
 };
 
-const buckets: string[][] = Object.entries(input);
+const partTwo: Input = {
+  Y: "draw",
+  X: "lose",
+  Z: "win",
+};
+
+function WLpartTwo(chunk: string): string {
+  const temp: string[] = chunk.trim().split("\n");
+  return temp
+    .map((x: string): string => {
+      let newMe: string = " ";
+      let [opp, me] = x.split(" ");
+      if (partTwo[me] === "draw") {
+        newMe = isDraw[opp];
+      } else if (partTwo[me] === "lose") {
+        newMe = isLose[opp];
+      } else if (partTwo[me] === "win") {
+        newMe = doesBeat[opp];
+      }
+      return `${opp} ${newMe}`;
+    })
+    .join("\n");
+}
 
 function WL(chunk: string) {
   const temp: string[] = chunk.trim().split("\n");
@@ -135,8 +167,15 @@ const wl = WL(input2);
 export const pointed = points(input2);
 export const wlTally = winLoseTally(wl);
 
+// partTwo
+const newMeInput = WLpartTwo(input2);
+const wlTwo = WL(newMeInput);
+const pointedTwo = points(newMeInput);
+const tallyTwo = winLoseTally(wlTwo);
+
 export function finalTally(points: number[], tally: number[]): number {
   return sum([...points, ...tally]);
 }
 
 // console.log(finalTally(pointed, wlTally));
+console.log(finalTally(pointedTwo, tallyTwo));
