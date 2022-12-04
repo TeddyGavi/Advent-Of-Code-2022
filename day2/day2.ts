@@ -45,13 +45,14 @@ B Z
 C Z
 B Z`;
 
-function chunkyBoi(inTwo: string) {
+export function chunkyBoi(toChunki: string[], chunk: number): string[][] {
   const result: string[][] = [];
+  const temp = [...toChunki];
 
-  const temp = inTwo.trim().split("\n");
-  for (let i = 0; i < temp.length; i++) {
-    let mychunk = temp.slice(i, (i += 3));
-    result.push(mychunk);
+  // const temp = inTwo.trim().split("\n");
+  for (let i = 0; i < temp.length; i += chunk) {
+    let myChunk = temp.slice(i, i + chunk);
+    result.push(myChunk);
   }
   return result;
 }
