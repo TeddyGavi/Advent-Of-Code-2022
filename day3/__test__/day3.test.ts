@@ -1,5 +1,5 @@
 import { input3, sample3 } from "../input3";
-import { sum } from "../../day1/day1";
+import { sum } from "../../utils/utils";
 import { priorityNumArray, priorityThrees } from "../day3";
 import { assert } from "chai";
 
@@ -18,5 +18,9 @@ describe("Day 3 tests Part one", () => {
 
   it("Should have the correct answer for part two given sample input", () => {
     assert.equal(sum(priorityThrees(sample3)), 70);
+  });
+
+  it("Correct answer for part two!", () => {
+    assert.equal(sum(priorityThrees(input3)), 2752);
   });
 });

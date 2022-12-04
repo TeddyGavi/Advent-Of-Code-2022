@@ -1,4 +1,4 @@
-import { sum } from "../day1/day1";
+import { sum } from "../utils/utils";
 import { input2 } from "./input2";
 const input: Input = {
   A: "Y", // ( 2 for paper and 6 for a win)
@@ -44,18 +44,6 @@ B Z
 B Z
 C Z
 B Z`;
-
-export function chunkyBoi(toChunki: string[], chunk: number): string[][] {
-  const result: string[][] = [];
-  const temp = [...toChunki];
-
-  // const temp = inTwo.trim().split("\n");
-  for (let i = 0; i < temp.length; i += chunk) {
-    let myChunk = temp.slice(i, i + chunk);
-    result.push(myChunk);
-  }
-  return result;
-}
 
 interface Input {
   [key: string]: string;

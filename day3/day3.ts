@@ -1,6 +1,5 @@
 import { sample3, input3 } from "./input3";
-import { sum } from "../day1/day1";
-import { chunkyBoi } from "../day2/day2";
+import { sum, chunkyBoi } from "../utils/utils";
 // set up function to get the correct char point
 export function stringToCharPoint(char: string): number {
   const codepoint = char.codePointAt(0) || -1;

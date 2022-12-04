@@ -1,13 +1,10 @@
 import { elf } from "./input";
+import { sum } from "../utils/utils";
 
 // take the initial string and create a matrix separated by "\n\n" characters
 // convert that array into number and sum each nested array returning the number
 //sort the array from highest to lowest
 //part 1 is the 0 index, part 2 is the first three
-
-export function sum(arr: number[]): number {
-  return arr.reduce((prev, curr) => (prev += curr), 0);
-}
 
 export function stringIFYInput(input: string): string[][] {
   const a: string[] = input.split("\n\n");
