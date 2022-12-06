@@ -1,7 +1,5 @@
 import { input5, sample5, sample5WithoutMatrix } from "./input5";
 
-// const moveArr = sample5WithoutMatrix.trim().split(/\n/);
-
 interface HardCodedIn {
   [key: number]: string[];
 }
@@ -98,15 +96,30 @@ function returnLastEle(afterMoves: HardCodedIn) {
   }
   return result;
 }
+function moveWholeStack(moves: Moves, crates: HardCodedIn) {
+  for (const e in moves) {
+    const { amount, from, to } = moves[e];
+    if (amount > 1) {
+      const moveThis = crates[from].slice(-amount)!;
+      // console.log(moveThis);
+      console.log(crates[from], moveThis);
+      // crates[to].push(moveThis);
+      crates[to] = [...crates[to], ...moveThis];
+      crates[from] = [...crates[from].slice(0, -amount)];
+    } else {
+      const moveThis = crates[from].pop()!;
+      crates[to].push(moveThis) || "";
+      // console.log(crates);
+    }
+  }
+  return crates;
+}
 
-// const inputArr = input5.split("\n");
-// console.log(test);
-// console.log(parseMoves(inputArr));
-// console.log(move(moveObj, test));
-// console.log(realMove);
+/* 
+must run separately to avoid mutating the array...hmmm
+*/
+// const moveArr = parseMoves(sample5WithoutMatrix.trim().split(/\n/));
+// const realMove = parseMoves(input5.split("\n"));
 
-const realMove = parseMoves(input5.split("\n"));
-// console.log(move(realMove, inFive));
-// console.log(test);
-
-console.log(returnLastEle(move(realMove, inFive)).join("")); // HBTMTBSDC!
+// console.log("part one:", returnLastEle(move(realMove, inFive)).join(""));
+// console.log("part two:", returnLastEle(moveWholeStack(realMove, inFive)).join(""));

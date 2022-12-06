@@ -12,7 +12,7 @@ move 1 from 1 to 2`;
 export const sample5WithoutMatrix: string = `move 1 from 2 to 1
 move 3 from 1 to 3
 move 2 from 2 to 1
-move 10 from 1 to 2`;
+move 1 from 1 to 2`;
 
 export const input5: string = `move 3 from 3 to 7
 move 4 from 1 to 9
